@@ -5,7 +5,7 @@
 <div class="unit-5 overlay" style="background-image: url({{ asset('external/images/hero_2.jpg') }})">
     <div class="container text-center">
       <h1 class="mb-0" style="    color: #fff;
-      font-size: 2.5rem;">Profile</strong></h1>
+      font-size: 2.5rem;">Perfil</strong></h1>
       <p class="mb-0 unit-6"><a href="/">Home</a> <span class="sep"> > <a href="{{ route('alljobs') }}">Jobs</a> </span> <span><span class="sep m-0"> ></span>{{ Auth::user()->name }}</span></p>
     </div>
 </div>
@@ -19,7 +19,7 @@
             <div class="col-md-8">
                 <div class="card">
                 <div class="card-header">
-                    Update your profile
+                    Actualiza tu perfil
                 </div>
                 <div class="card-body">
                         <form action="{{ route('profile.create') }}" method="POST">
@@ -139,11 +139,23 @@
                         <p>Member On: <strong class="badge bg-secondary badge-primary"> {{ date('F d Y', strtotime(Auth::user()->created_at)) }}</strong> </p>
 
                         @if (!empty(Auth::user()->profile->cover_letter))
-                            <p>Download cover letter: <strong class="badge bg-info badge-primary"><a class="text-white" target="_blank" href="{{ url('storage/'.Auth::user()->profile->cover_letter) }}"> Cover letter</a></strong></p>
+                            <p>Download Carta: <strong class="badge bg-info badge-primary"><a class="text-white" target="_blank" href="{{ url('storage/'.Auth::user()->profile->cover_letter) }}"> Carta</a></strong></p>
                         @endif
                         @if (!empty(Auth::user()->profile->resume))
-                            <p>Download resume: <strong class="badge bg-info badge-primary"><a  class="text-white"target="_blank" href="{{ url('storage/'.Auth::user()->profile->resume) }}"> Resume</a> </strong></p>
+                            <p>Download CV: <strong class="badge bg-info badge-primary"><a  class="text-white"target="_blank" href="{{ url('storage/'.Auth::user()->profile->resume) }}"> CV</a> </strong></p>
                         @endif
+
+                        
+                        @if (!empty(Auth::user()->profile->resume))
+                            <h4>Previsualización de CV:</h4>
+                            <iframe src="{{ url('storage/' . Auth::user()->profile->resume) }}" style="width:100%; height:500px;" frameborder="0"></iframe>
+                        @endif
+
+                        @if (!empty(Auth::user()->profile->cover_letter))
+                            <h4>Previsualización de carta de presentación:</h4>
+                            <iframe src="{{ url('storage/' . Auth::user()->profile->cover_letter) }}" style="width:100%; height:500px;" frameborder="0"></iframe>
+                        @endif
+
 
                     </div>
                 </div>

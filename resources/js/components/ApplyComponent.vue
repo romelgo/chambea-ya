@@ -6,7 +6,7 @@
                 Postular
             </button>
             <div v-else-if="vacancies === 0" class="alert alert-warning">
-                ya te postulas mierda ctmr vago
+                postulacion con exito
             </div>
             <div v-else class="alert alert-success">
                 Solicitud enviada con éxito.

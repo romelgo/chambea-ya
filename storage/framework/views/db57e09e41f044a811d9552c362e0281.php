@@ -79,9 +79,20 @@
              <div><span class="fl-bigmug-line-big104"></span> <span><?php echo e($job->address); ?></span></div>
            </div>
            <div class="job-post-item-body d-block d-md-flex">
-             <div class="mr-3"><span class="fl-bigmug-line-portfolio23"></span> <a href="#">Nº postulantes: </a><strong><?php echo e($job->number_of_vacancy); ?></strong></div>
-             <div><span class="fl-bigmug-line-big104"></span> Vacantes Disponibles: <span><?php echo e($job->number_of_vacancy); ?></span></div>
+             <!-- <div class="mr-3"><span class="fl-bigmug-line-portfolio23"></span> <a href="#">Nº postulantes: </a><strong><?php echo e($job->number_of_vacancy); ?></strong></div> -->
+             <!-- <div><span class="fl-bigmug-line-big104"></span> Vacantes Disponibles: </div> -->
+             <!-- <h5 class="h5 text-black mb-3"><i class="icon-users" style="color: #de1084;">&nbsp;</i>Vacantes Disponibles: <span><?php echo e($job->number_of_vacancy); ?></span></h5>  -->
+                <!-- Agrega este estilo CSS -->
+             
+             <h6 class="text-black mb-3">
+                  <i class="icon-users" style="color: #de1084;">&nbsp;</i>
+                  Vacantes Disponibles: <span style="display: inline-block; transition: transform 0.3s ease-in-out; transform: scale(1.1);"><?php echo e($job->number_of_vacancy); ?></span>
+            </h6>
            </div>
+           <hr style="border: 0; height: 2px; background-color: #de1084;">
+ 
+           <div class=" mb-8 bg-white">
+          </div>
           </div>
 
 
@@ -99,11 +110,7 @@
             <p><?php echo e($job->roles); ?> .</p>
             
           </div>
-          <div class=" mb-8 bg-white">
-            <h3 class="h5 text-black mb-3"><i class="icon-users" style="color: #28a745;">&nbsp;</i>Number of vacancy</h3>
-            <p><?php echo e($job->number_of_vacancy); ?> Year of Experience.</p>
-            
-          </div>
+          
           <div class=" mb-8 bg-white">
             <h3 class="h5 text-black mb-3"><i class="icon-clock-o" style="color: #28a745;">&nbsp;</i>Experience</h3>
             <p><?php echo e($job->experience); ?>&nbsp;years</p>
@@ -138,7 +145,6 @@
 
             <p><a href="<?php echo e(route('company.index',[$job->company->id,$job->company->slug])); ?>" class="btn btn-info" style="width: 100%;">Visitar la página de la empresa</a></p>
               <!--  -->
-              </span> Vacante disponible: <span><?php echo e($job->number_of_vacancy); ?></span>
               <?php if(Auth::check() && Auth::user()->user_type == 'seeker'): ?>
     <?php if(!$job->checkApplication()): ?>
         <?php if($job->number_of_vacancy > 0): ?>
@@ -408,8 +414,7 @@ unset($__errorArgs, $__bag); ?>
     </div>
   </div>
     <!-- Modal -->
-  
-
+ 
 
 
 <?php $__env->stopSection(); ?>

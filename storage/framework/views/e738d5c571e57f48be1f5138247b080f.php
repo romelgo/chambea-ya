@@ -73,8 +73,10 @@
 
                               </div>
                               <div>
-                                  <p><strong>Nº vacantes:</strong>  <span class="icon-suitcase mr-1"></span> 
-                                  <?php echo e($job->number_of_vacancy); ?></p>
+                             
+                                    <i class="icon-users" style="color: #de1084;">&nbsp;</i>
+                                    Vacantes Disponibles: <span style="display: inline-block; transition: transform 0.3s ease-in-out; transform: scale(1.1);"><?php echo e($job->number_of_vacancy); ?></span>
+                             
                               </div>
                           </div>
                       </div>

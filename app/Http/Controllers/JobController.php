@@ -189,11 +189,24 @@ class JobController extends Controller
     /**
      * Job apply method.
      */
-    public function apply(Request $request,$id){
-        $jobId = Job::find($id);
-        $jobId->users()->attach(Auth::user()->id);
-    
-        return redirect()->back()->with('message', 'Trabajo solicitado con éxito.');
+   /* otor metodo mierd·· */
+   public function apply(Request $request, $id){
+        // Encuentra el trabajo al que se está postulando el usuario
+        $job = Job::findOrFail($id);
+
+        // Verifica si hay vacantes disponibles
+        if ($job->number_of_vacancy > 0) {
+            // Agrega la relación entre el trabajo y el usuario
+            $job->users()->attach(Auth::user()->id);
+
+            // Resta una vacante del trabajo
+            $job->number_of_vacancy -= 1;
+            $job->save();
+
+            return redirect()->back()->with('message', 'Trabajo solicitado con éxito.');
+        } else {
+            return redirect()->back()->with('message', 'No hay vacantes disponibles para este trabajo.');
+        }
     }
 
 

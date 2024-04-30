@@ -5,7 +5,7 @@
             @click.prevent="unsave()"
             class="w-100 btn btn-dark mt-1"
         >
-            UnSave Job
+            Dejar de guardar trabajo
         </button>
 
         <button
@@ -13,7 +13,7 @@
             @click.prevent="save()"
             class="w-100 btn btn-primary mt-1"
         >
-            Save Job
+            Guardar trabajo
         </button>
     </div>
 </template>

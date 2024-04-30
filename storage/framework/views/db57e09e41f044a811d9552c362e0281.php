@@ -80,7 +80,7 @@
            </div>
            <div class="job-post-item-body d-block d-md-flex">
              <div class="mr-3"><span class="fl-bigmug-line-portfolio23"></span> <a href="#">Nº postulantes: </a><strong><?php echo e($job->number_of_vacancy); ?></strong></div>
-             <div><span class="fl-bigmug-line-big104"></span> Nº solitantes: <span><?php echo e($job->number_of_vacancy); ?></span></div>
+             <div><span class="fl-bigmug-line-big104"></span> Vacantes Disponibles: <span><?php echo e($job->number_of_vacancy); ?></span></div>
            </div>
           </div>
 
@@ -129,16 +129,44 @@
         
         <div class="p-4 mb-3 bg-white">
           <h3 class="h5 text-black mb-3">Información breve sobre el trabajo</h3>
-            <p>Company name: <?php echo e($job->company->cname ?? ''); ?></p>
-            <p>Address: <?php echo e($job->address); ?></p>
-            <p>Employment Type: <?php echo e(Str::ucfirst($job->type)); ?></p>
+            <p><strong>Company Nombre:</strong> <?php echo e($job->company->cname ?? ''); ?></p>
+            <p><strong>Address:</strong> <?php echo e($job->address); ?></p>
+            <p><strong>Employment Type:</strong> <?php echo e(Str::ucfirst($job->type)); ?></p>
             <p>Position: <?php echo e(Str::ucfirst($job->position)); ?></p>
             <p>Posted: <?php echo e($job->created_at->diffForHumans()); ?></p>
-            <p>Last date to apply: <?php echo e(date('F d, Y', strtotime($job->last_date))); ?></p>
+            <p><strong>Última fecha para presentar la solicitud:</strong>  <?php echo e(date('F d, Y', strtotime($job->last_date))); ?></p>
 
-            <p><a href="<?php echo e(route('company.index',[$job->company->id,$job->company->slug])); ?>" class="btn btn-warning" style="width: 100%;">Visit Company Page</a></p>
+            <p><a href="<?php echo e(route('company.index',[$job->company->id,$job->company->slug])); ?>" class="btn btn-info" style="width: 100%;">Visitar la página de la empresa</a></p>
+              <!--  -->
+              </span> Vacante disponible: <span><?php echo e($job->number_of_vacancy); ?></span>
+              <?php if(Auth::check() && Auth::user()->user_type == 'seeker'): ?>
+    <?php if(!$job->checkApplication()): ?>
+        <?php if($job->number_of_vacancy > 0): ?>
+            <p>
+                <!-- Incluir el componente apply-component con el ID del trabajo -->
+                <apply-component jobid="<?php echo e($job->id); ?>"></apply-component>
+            </p>
+        <?php else: ?>
+            <!-- Mostrar mensaje de "NO disponible" si no hay vacantes -->
+            <p><span class="alert alert-danger w-100">NO disponible</span></p>
+        <?php endif; ?>
+    <?php else: ?>
+        <!-- Mostrar botón deshabilitado si ya se ha aplicado -->
+        <p><button type="button" class="w-100 text-black btn btn-warning" disabled>Ya aplicado</button></p>
+    <?php endif; ?>
 
-            <?php if(Auth::check() && Auth::user()->user_type=='seeker'): ?>
+    <!-- Incluir el componente favorite-component -->
+    <p>
+        <favorite-component :jobid="<?php echo e($job->id); ?>" :favorited="<?php echo e($job->checkSaved() ? 'true' : 'false'); ?>"></favorite-component>
+    </p>
+
+<?php elseif(!Auth::check()): ?>
+    <!-- Mostrar botón para iniciar sesión o registrarse -->
+    <p><a href="/register" class="btn btn-dark w-100">Para aplicar es necesario registrarse/iniciar sesión.</a></p>
+<?php endif; ?>
+
+              <!--  -->
+            <!-- <?php if(Auth::check() && Auth::user()->user_type=='seeker'): ?>
                   <?php if(!$job->checkApplication()): ?>
                   <p>
                     <apply-component jobid=<?php echo e($job->id); ?>></apply-component>
@@ -146,7 +174,7 @@
                   </p>
                       
                   <?php else: ?>
-                      <p> <button type="button" class="w-100 text-black btn btn-warning " disabled>Already applied</button></p>
+                      <p> <button type="button" class="w-100 text-black btn btn-warning " disabled>Ya aplicado</button></p>
                   <?php endif; ?>
 
                   <p> <favorite-component :jobid=<?php echo e($job->id); ?> :favorited=<?php echo e($job->checkSaved() ? 'true':'false'); ?>></favorite-component></p>
@@ -159,8 +187,8 @@
 
               <p><a href="/register" class="btn btn-dark" style="width: 100%;">Para aplicar es necesario registrarse/iniciar sesión.</a></p>
 
-            <?php endif; ?>
-          
+            <?php endif; ?> -->
+         <!--   -->
         </div>
       </div>
 

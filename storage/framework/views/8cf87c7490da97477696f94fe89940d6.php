@@ -2,7 +2,6 @@
 
 
 <div class="site-wrap">
-
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
       <div class="site-mobile-menu-close mt-3">
@@ -87,6 +86,7 @@
                             <?php endif; ?>
 
                             <?php if(Auth::user()->user_type==='seeker'): ?>
+                            <!-- <a href="/user/profile">jii</a> -->
                             <li><a  href="<?php echo e(route('user.profile')); ?>">
                                 <?php echo e(__('Mi perfil')); ?>
 
@@ -100,11 +100,6 @@
 
                             </a></li>
                             <?php endif; ?>
-
-
-
-
-
                           </ul>
                         </li>
                     

@@ -68,7 +68,7 @@
 
                             </div>
                             <div class="form-group mt-3">
-                                <button class="btn btn-success">Update</button>
+                                <button class="btn btn-success">Actualizar</button>
                             </div>
                             @if (Session::has('message'))
                                 <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
@@ -126,7 +126,7 @@
 
                 <div class="card mt-3">
                     <div class="card-header">
-                        Your info
+                        tu  informacion
                     </div>
                     <div class="card-body">
                         <p>Name:  <strong class="badge bg-secondary badge-primary">{{ Auth::user()->name }}</strong></p>

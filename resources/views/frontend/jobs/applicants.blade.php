@@ -34,13 +34,14 @@
                                     <th scope="col">Nababur:</th>
                                  
                                     <th scope="col">Email:</th>
-                                    <th scope="col">Gender:</th>
+                                    <th scope="col">Género:</th>
                                
                                     <th scope="col">Bio:</th>
-                                    <th scope="col">Cover letter:</th>
-                                    <th scope="col">Resume:</th>
+                                    <th scope="col">Carta:</th>
+                                    <th scope="col">CV:</th>
                                 </tr>
                                 </thead>
+
                                 <tbody>
 
                                     <tr>
@@ -53,17 +54,17 @@
                                         <td>{{$user->profile->bio}}</td>
                             
                                         @if ($user->profile->cover_letter)
-                                        <td><a class="badge badge-secondary" target="_blank" href="{{ url('storage/'.$user->profile->cover_letter) }}">Cover letter</a></td>
+                                        <td><a class="badge badge-success p-2" target="_blank" href="{{ url('storage/'.$user->profile->cover_letter) }}">ver Carta</a></td>
                                         
                                         @else
-                                        <td>Not uploaded</td>
+                                        <td>No subido</td>
                                         @endif
 
                                         @if ($user->profile->resume)
-                                        <td><a class="badge badge-secondary" target="_blank" href="{{ url('storage/'.$user->profile->resume) }}">Resume</a></td>
+                                        <td><a class="badge badge-success p-2" target="_blank" href="{{ url('storage/'.$user->profile->resume) }}">ver CV</a></td>
                                         
                                         @else
-                                        <td>Not uploaded</td>
+                                        <td>No subido</td>
                                         @endif
                                     
                                     </tr>
@@ -78,7 +79,7 @@
                 </div>
                 @else
 
-                    <h3 class="text-center">No applicants apply your yet.</h3>
+                    <h3 class="text-center">Ningún solicitante aplica su todavía.</h3>
 
                 @endif
             </div>

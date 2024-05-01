@@ -2,7 +2,6 @@
 
 
 <div class="site-wrap">
-
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
       <div class="site-mobile-menu-close mt-3">
@@ -81,6 +80,7 @@
                             @endif
 
                             @if (Auth::user()->user_type==='seeker')
+                            <!-- <a href="/user/profile">jii</a> -->
                             <li><a  href="{{ route('user.profile') }}">
                                 {{ __('Mi perfil') }}
                             </a></li>
@@ -91,11 +91,6 @@
                                 {{ __('Trabajos guardados') }}
                             </a></li>
                             @endif
-
-
-
-
-
                           </ul>
                         </li>
                     

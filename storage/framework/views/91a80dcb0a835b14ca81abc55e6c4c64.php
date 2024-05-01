@@ -8,6 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="<?php echo e(asset('icono.ico')); ?>" type="image/x-icon">
+
     <title><?php echo e(config('app.jobBoard', 'ChambeaYA!')); ?></title>
     <meta name="description" content="Unlock unparalleled job board performance with our meticulously designed Laravel Vue template. Seamlessly blend functionality and aesthetics while dominating search rankings through advanced SEO optimization. Elevate user experience, engage job seekers and employers effortlessly. Explore limitless possibilities for your job board platform today.">
 

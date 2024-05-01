@@ -44,5 +44,6 @@ class HomeController extends Controller
         $jobss = Auth::user()->job_user;
         return view('home', compact('jobss'));
     }
+    
    
 }

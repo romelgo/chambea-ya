@@ -50,7 +50,7 @@
         <div class="col-md-12">
           <p>
           
-          Copyright &copy; </script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This JobBoard develop by <a href="https://nababur.info/" target="_blank" >Nababur rahaman</a>
+          Copyright &copy; </script><script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Esta bolsa laboral desarrollado por <a href="https://upeu.edu.pe/" target="_blank" >Estudianes de UPeU</a>
 
           </p>
         </div>

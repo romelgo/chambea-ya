@@ -153,7 +153,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content pb-4">
       <div class="modal-header mt-2 mb-2">
-        <h5 class="modal-title" id="login-modal"><?php echo e(__('User/Employee/Admin')); ?></h5>
+        <h5 class="modal-title" id="login-modal"><?php echo e(__('Usuario/Empresa/Admin')); ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -166,7 +166,7 @@
                     <?php echo csrf_field(); ?>
                       
                     <div class="row mb-3">
-                        <label for="email" class="col-md-12 col-form-label text-md-start"><?php echo e(__('Email Address')); ?></label>
+                        <label for="email" class="col-md-12 col-form-label text-md-start"><?php echo e(__('Corro electrónico')); ?></label>
 
                         <div class="col-md-12">
                             <input id="email" type="email" class="form-control <?php $__errorArgs = ['email'];
@@ -206,7 +206,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" name="password" required autocomplete="current-password">
 
-                            <?php $__errorArgs = ['password'];
+                            <?php $__errorArgs = ['Contraseña'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -227,7 +227,7 @@ unset($__errorArgs, $__bag); ?>
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>>
 
                                 <label class="form-check-label" for="remember">
-                                    <?php echo e(__('Remember Me')); ?>
+                                    <?php echo e(__('Recordarme')); ?>
 
                                 </label>
                             </div>
@@ -237,13 +237,13 @@ unset($__errorArgs, $__bag); ?>
                     <div class="row mb-0">
                         <div class="col-md-12 ">
                             <button type="submit" class="btn btn-primary">
-                                <?php echo e(__('Login')); ?>
+                                <?php echo e(__('Iniciar')); ?>
 
                             </button>
 
                             <?php if(Route::has('password.request')): ?>
                                 <a class="btn btn-link" href="<?php echo e(route('password.request')); ?>">
-                                    <?php echo e(__('Forgot Your Password?')); ?>
+                                    <?php echo e(__('¿Olvidaste tu contraseña?')); ?>
 
                                 </a>
                             <?php endif; ?>

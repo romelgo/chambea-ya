@@ -22,10 +22,10 @@ class DatabaseSeeder extends Seeder
     {
         Category::truncate();
 
-        User::factory(50)->create();
-        Company::factory(100)->create();
-        Job::factory(200)->create();
-        Post::factory(50)->create();
+        User::factory(10)->create();
+        Company::factory(10)->create();
+        Job::factory(20)->create();
+        Post::factory(5)->create();
         Testimonial::factory(1)->create();
 
         $categories = [
@@ -68,10 +68,10 @@ class DatabaseSeeder extends Seeder
         $adminRole = Role::create(['name'=> 'admin']);
         $admin = User::create([
             'name'=> 'admin',
-            'email'=> 'nababurdev@gmail.com',
+            'email'=> 'romelgutierrez90@gmail.com',
             'user_type'=> 'admin',
             'status'=> '1',
-            'password'=> bcrypt('nababurdev123'),
+            'password'=> bcrypt('Admin123bolsa'),
             'email_verified_at'=> NOW()
         ]);
 

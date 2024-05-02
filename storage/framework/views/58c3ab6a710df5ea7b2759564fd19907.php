@@ -71,11 +71,11 @@
              <h2 class="mr-3 text-black h4"><?php echo e($job->position); ?></h2>
              <div class="badge-wrap">
               <span class="border border-warning text-warning py-2 px-4 rounded"><?php echo e(Str::ucfirst($job->type)); ?></span>
-              <span class="border ml-3 bg-primary border-primary text-white py-2 px-4 rounded"><a href="#"data-toggle="modal" data-target="#recomend-job-modal"><i class="icon-envelope-o" style="font-size: 20px;color:#fff"></i></a></span>
+             <!--  <span class="border ml-3 bg-primary border-primary text-white py-2 px-4 rounded"><a href="#"data-toggle="modal" data-target="#recomend-job-modal"><i class="icon-envelope-o" style="font-size: 20px;color:#fff"></i></a></span> -->
              </div>
            </div>
            <div class="job-post-item-body d-block d-md-flex">
-             <div class="mr-3"><span class="fl-bigmug-line-portfolio23"></span> <a href="#">Office address:</a></div>
+             <div class="mr-3"><span class="fl-bigmug-line-portfolio23"></span> <a href="#">Dirección de la oficina:</a></div>
              <div><span class="fl-bigmug-line-big104"></span> <span><?php echo e($job->address); ?></span></div>
            </div>
            <div class="job-post-item-body d-block d-md-flex">
@@ -99,31 +99,32 @@
         
           <div class=" mb-8 bg-white">
             <!-- icon-book mr-3-->
-            <h3 class="h5 text-black mb-3"><i class="icon-library_books" style="color: #28a745;">&nbsp;</i>Description </a></h3>
+            <h3 class="h5 text-black mb-3"><i class="icon-library_books" style="color: #28a745;">&nbsp;</i>Descripcion del trabajo </a></h3>
             <p> <?php echo e($job->description); ?></p>
             
           </div>
     
           <div class=" mb-8 bg-white">
             <!--icon-align-left mr-3-->
-            <h3 class="h5 text-black mb-3"><i class="icon-user" style="color: #28a745;">&nbsp;</i>Roles and Responsibilities</h3>
+            <h3 class="h5 text-black mb-3"><i class="icon-user" style="color: #28a745;">&nbsp;</i>Funciones y responsabilidades</h3>
             <p><?php echo e($job->roles); ?> .</p>
             
           </div>
           
           <div class=" mb-8 bg-white">
-            <h3 class="h5 text-black mb-3"><i class="icon-clock-o" style="color: #28a745;">&nbsp;</i>Experience</h3>
-            <p><?php echo e($job->experience); ?>&nbsp;years</p>
+            <h3 class="h5 text-black mb-3"><i class="icon-clock-o" style="color: #28a745;">&nbsp;</i>Experiencia</h3>
+            <p><?php echo e($job->experience); ?>&nbsp;años</p>
             
           </div>
-          <div class=" mb-8 bg-white">
+          <!-- <div class=" mb-8 bg-white">
             <h3 class="h5 text-black mb-3"><i class="icon-genderless" style="color: #28a745;">&nbsp;</i>Gender</h3>
             <p> <?php echo e(Str::ucfirst($job->gender)); ?></p>
             
-          </div>
+          </div> -->
           <div class=" mb-8 bg-white">
-            <h3 class="h5 text-black mb-3"><i class="icon-money" style="color: #28a745;">&nbsp;</i>Salary</h3>
-            <p>$<?php echo e($job->salary); ?></p>
+            <h3 class="h5 text-black mb-3"><i class="icon-money" style="color: #28a745;">&nbsp;</i>Salario</h3>
+            <p class="fw-bold text-primary">$<?php echo e($job->salary); ?></p>
+
           </div>
       
  
@@ -135,13 +136,13 @@
         
         
         <div class="p-4 mb-3 bg-white">
-          <h3 class="h5 text-black mb-3">Información breve sobre el trabajo</h3>
-            <p><strong>Company Nombre:</strong> <?php echo e($job->company->cname ?? ''); ?></p>
-            <p><strong>Address:</strong> <?php echo e($job->address); ?></p>
-            <p><strong>Employment Type:</strong> <?php echo e(Str::ucfirst($job->type)); ?></p>
-            <p>Position: <?php echo e(Str::ucfirst($job->position)); ?></p>
-            <p>Posted: <?php echo e($job->created_at->diffForHumans()); ?></p>
-            <p><strong>Última fecha para presentar la solicitud:</strong>  <?php echo e(date('F d, Y', strtotime($job->last_date))); ?></p>
+          <h3 class="h5 text-black mb-3">Información Breve</h3>
+            <p><strong>Empresa:</strong> <?php echo e($job->company->cname ?? ''); ?></p>
+            <p><strong>Dirección:</strong> <?php echo e($job->address); ?></p>
+            <p><strong>Tipo de empleo:</strong> <?php echo e(Str::ucfirst($job->type)); ?></p>
+            <p><strong>Cargo:</strong> <?php echo e(Str::ucfirst($job->position)); ?></p>
+            <p><strong>Trabajo publicado:</strong> <?php echo e($job->created_at->diffForHumans()); ?></p>
+            <p><strong>Última fecha para la postulación:</strong>  <?php echo e(date('F d, Y', strtotime($job->last_date))); ?></p>
 
             <p><a href="<?php echo e(route('company.index',[$job->company->id,$job->company->slug])); ?>" class="btn btn-info" style="width: 100%;">Visitar la página de la empresa</a></p>
               <!--  -->

@@ -6,8 +6,8 @@
 <div class="unit-5 overlay" style="background-image: url({{ asset('uploads/banner') }}/{{ $company->banner }});">
     <div class="container text-center">
       <h1 class="mb-0" style="    color: #fff;
-      font-size: 2.5rem;">Company name:<strong>&nbsp;{{ $company->cname }}</strong></h1>
-      <p class="mb-0 unit-6"><a href="/">Home</a> <span class="sep"> > <a href="{{ route('alljobs') }}">Jobs</a> </span> <span><span class="sep m-0"> ></span> Company details</span></p>
+      font-size: 2.5rem;">Empresa:<strong>&nbsp;{{ $company->cname }}</strong></h1>
+      <p class="mb-0 unit-6"><a href="/">Home</a> <span class="sep"> > <a href="{{ route('alljobs') }}">Trabajos</a> </span> <span><span class="sep m-0"> ></span> Detalles de la compañía</span></p>
     </div>
 </div>
   
@@ -31,13 +31,13 @@
                     <img src="{{ asset('uploads/logo') }}/{{ $company->logo }}" style="width:100px; height:100px;border-radius:100px;object-fit: cover;" class="border  mb-3" alt="">
                     @endif
         
-                    <h3 class="mx-4 mb-0">Company name:<strong>&nbsp;{{ $company->cname }}</strong> </h3>
+                    <h3 class="mx-4 mb-0">Empresa:<strong>&nbsp;{{ $company->cname }}</strong> </h3>
 
                 </div>
-                <p class="mt-3"><strong>Company Details:</strong> &nbsp;{{ $company->description }}</p>
+                <p class="mt-3"><strong>Detalles de la compañía:</strong> &nbsp;{{ $company->description }}</p>
                 <p><strong>Slogan:</strong>&nbsp;{{ $company->slogan }}</p>
-                <p><strong>Address:</strong>&nbsp;{{ $company->address }}</p>
-                <p><strong>Phone:</strong>&nbsp;{{ $company->phone }}</p>
+                <p><strong>Dirección:</strong>&nbsp;{{ $company->address }}</p>
+                <p><strong>Teléfono:</strong>&nbsp;{{ $company->phone }}</p>
                 <p><strong>Website: </strong>&nbsp;<a target="_blank" href="{{ $company->website }}">{{ $company->website }}</a></p>
                
              </div>
@@ -57,7 +57,7 @@
      
         <div class="col-md-12 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
             <div class="p-4 bg-white">
-            <h3 class="mb-5 h3">{{ $company->cname }} <i style="color: #28a745;" class="icon-hand-o-right"></i> other Jobs</h3>
+            <h3 class="mb-5 h3">{{ $company->cname }} <i style="color: #28a745;" class="icon-hand-o-right"></i> otros trabajos</h3>
             <div class="rounded border jobs-wrap">
   
           
@@ -95,7 +95,7 @@
                 <div class="job-category align-self-center">
                   <div class="p-3">
                     
-                    <span class="text-info p-2 rounded border border-info">Apply Job</span>
+                    <span class="text-info p-2 rounded border border-info">Ver mas</span>
                   </div>
                 </div>  
               </a>

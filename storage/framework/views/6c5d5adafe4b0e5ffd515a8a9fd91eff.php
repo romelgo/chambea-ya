@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><?php echo e(__('Reset Password')); ?></div>
+                <div class="card-header"><?php echo e(__('Restablecer la contraseña')); ?></div>
 
                 <div class="card-body">
                     <?php if(session('status')): ?>
@@ -21,7 +21,7 @@
                         <?php echo csrf_field(); ?>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end"><?php echo e(__('Email Address')); ?></label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end"><?php echo e(__('Correo electrónico')); ?></label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control <?php $__errorArgs = ['email'];
@@ -51,7 +51,7 @@ unset($__errorArgs, $__bag); ?>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <?php echo e(__('Send Password Reset Link')); ?>
+                                    <?php echo e(__('Enviar enlace para restablecer contraseña')); ?>
 
                                 </button>
                             </div>

@@ -4,8 +4,8 @@
 <div class="unit-5 overlay" style="background-image: url(<?php echo e(asset('external/images/hero_2.jpg')); ?>);">
   <div class="container text-center">
     <h1 class="mb-0" style="    color: #fff;
-    font-size: 2.5rem;">Jobs by : <?php echo e($categoryName->name); ?></h1>
-    <p class="mb-0 unit-6"><a href="/">Home</a> <span class="sep"> > <a href="<?php echo e(route('alljobs')); ?>">Jobs</a> </span> <span><span class="sep m-0"> ></span> Category</span></p>
+    font-size: 2.5rem;">Trabajos para: <?php echo e($categoryName->name); ?></h1>
+    <p class="mb-0 unit-6"><a href="/">Home</a> <span class="sep"> > <a href="<?php echo e(route('alljobs')); ?>">Trabajos</a> </span> <span><span class="sep m-0"> ></span> Categoria</span></p>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
 
 
                 <div class="card">
-                    <div class="card-header"><h3>All <?php echo e($categoryName->name); ?>category Jobs</h3></div>
+                    <div class="card-header"><h3>Todos los trabajos de <strong><?php echo e($categoryName->name); ?></strong></h3></div>
 
                     <div class="card-body">
                         <?php if(count($jobs) > 0): ?>
@@ -28,12 +28,12 @@
                             <tr>
                                 <th scope="col">SL</th>
                                 <th scope="col">Logo:</th>
-                                <th scope="col">Title:</th>
-                                <th scope="col">Address:</th>
-                                <th scope="col">Job Type:</th>
-                                <th scope="col">Job posted:</th>
+                                <th scope="col">Título:</th>
+                                <th scope="col">Dirección:</th>
+                                <th scope="col">Tipo de trabajo:</th>
+                                <th scope="col">Trabajo publicado:</th>
                             
-                                <th scope="col">Action:</th>
+                                <th scope="col">Acción:</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -58,7 +58,7 @@
                                         <td><i class="fas px-2 fa-business-time"></i><?php echo e(Str::ucfirst($job->type)); ?></td>
                                         <td><i class="far px-2 fa-clock"></i> <?php echo e($job->created_at->diffForHumans()); ?></td>
                                     
-                                        <td><a href="<?php echo e(route('job.show', [$job->id, $job->slug])); ?>"><button class="btn btn-success btn-sm">Apply</button></a></td>
+                                        <td><a href="<?php echo e(route('job.show', [$job->id, $job->slug])); ?>"><button class="btn btn-success btn-sm">Ver mas</button></a></td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
@@ -67,7 +67,7 @@
                         </table>
                         <?php else: ?>
 
-                        <h4 class="text-center">No category job posted yet.</h4>
+                        <h4 class="text-center">Aún no se ha publicado ningún trabajo de categoría.</h4>
 
 
                         <?php endif; ?>

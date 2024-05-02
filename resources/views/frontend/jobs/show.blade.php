@@ -70,11 +70,11 @@
              <h2 class="mr-3 text-black h4">{{$job->position}}</h2>
              <div class="badge-wrap">
               <span class="border border-warning text-warning py-2 px-4 rounded">{{Str::ucfirst($job->type)}}</span>
-              <span class="border ml-3 bg-primary border-primary text-white py-2 px-4 rounded"><a href="#"data-toggle="modal" data-target="#recomend-job-modal"><i class="icon-envelope-o" style="font-size: 20px;color:#fff"></i></a></span>
+             <!--  <span class="border ml-3 bg-primary border-primary text-white py-2 px-4 rounded"><a href="#"data-toggle="modal" data-target="#recomend-job-modal"><i class="icon-envelope-o" style="font-size: 20px;color:#fff"></i></a></span> -->
              </div>
            </div>
            <div class="job-post-item-body d-block d-md-flex">
-             <div class="mr-3"><span class="fl-bigmug-line-portfolio23"></span> <a href="#">Office address:</a></div>
+             <div class="mr-3"><span class="fl-bigmug-line-portfolio23"></span> <a href="#">Dirección de la oficina:</a></div>
              <div><span class="fl-bigmug-line-big104"></span> <span>{{$job->address}}</span></div>
            </div>
            <div class="job-post-item-body d-block d-md-flex">
@@ -98,31 +98,32 @@
         
           <div class=" mb-8 bg-white">
             <!-- icon-book mr-3-->
-            <h3 class="h5 text-black mb-3"><i class="icon-library_books" style="color: #28a745;">&nbsp;</i>Description </a></h3>
+            <h3 class="h5 text-black mb-3"><i class="icon-library_books" style="color: #28a745;">&nbsp;</i>Descripcion del trabajo </a></h3>
             <p> {{$job->description}}</p>
             
           </div>
     
           <div class=" mb-8 bg-white">
             <!--icon-align-left mr-3-->
-            <h3 class="h5 text-black mb-3"><i class="icon-user" style="color: #28a745;">&nbsp;</i>Roles and Responsibilities</h3>
+            <h3 class="h5 text-black mb-3"><i class="icon-user" style="color: #28a745;">&nbsp;</i>Funciones y responsabilidades</h3>
             <p>{{$job->roles}} .</p>
             
           </div>
           
           <div class=" mb-8 bg-white">
-            <h3 class="h5 text-black mb-3"><i class="icon-clock-o" style="color: #28a745;">&nbsp;</i>Experience</h3>
-            <p>{{$job->experience}}&nbsp;years</p>
+            <h3 class="h5 text-black mb-3"><i class="icon-clock-o" style="color: #28a745;">&nbsp;</i>Experiencia</h3>
+            <p>{{$job->experience}}&nbsp;años</p>
             
           </div>
-          <div class=" mb-8 bg-white">
+          <!-- <div class=" mb-8 bg-white">
             <h3 class="h5 text-black mb-3"><i class="icon-genderless" style="color: #28a745;">&nbsp;</i>Gender</h3>
             <p> {{  Str::ucfirst($job->gender)}}</p>
             
-          </div>
+          </div> -->
           <div class=" mb-8 bg-white">
-            <h3 class="h5 text-black mb-3"><i class="icon-money" style="color: #28a745;">&nbsp;</i>Salary</h3>
-            <p>${{$job->salary}}</p>
+            <h3 class="h5 text-black mb-3"><i class="icon-money" style="color: #28a745;">&nbsp;</i>Salario</h3>
+            <p class="fw-bold text-primary">${{$job->salary}}</p>
+
           </div>
       
  
@@ -134,13 +135,13 @@
         
         
         <div class="p-4 mb-3 bg-white">
-          <h3 class="h5 text-black mb-3">Información breve sobre el trabajo</h3>
-            <p><strong>Company Nombre:</strong> {{$job->company->cname ?? ''}}</p>
-            <p><strong>Address:</strong> {{$job->address}}</p>
-            <p><strong>Employment Type:</strong> {{  Str::ucfirst($job->type)}}</p>
-            <p>Position: {{  Str::ucfirst($job->position)}}</p>
-            <p>Posted: {{$job->created_at->diffForHumans()}}</p>
-            <p><strong>Última fecha para presentar la solicitud:</strong>  {{ date('F d, Y', strtotime($job->last_date)) }}</p>
+          <h3 class="h5 text-black mb-3">Información Breve</h3>
+            <p><strong>Empresa:</strong> {{$job->company->cname ?? ''}}</p>
+            <p><strong>Dirección:</strong> {{$job->address}}</p>
+            <p><strong>Tipo de empleo:</strong> {{  Str::ucfirst($job->type)}}</p>
+            <p><strong>Cargo:</strong> {{  Str::ucfirst($job->position)}}</p>
+            <p><strong>Trabajo publicado:</strong> {{$job->created_at->diffForHumans()}}</p>
+            <p><strong>Última fecha para la postulación:</strong>  {{ date('F d, Y', strtotime($job->last_date)) }}</p>
 
             <p><a href="{{route('company.index',[$job->company->id,$job->company->slug])}}" class="btn btn-info" style="width: 100%;">Visitar la página de la empresa</a></p>
               <!--  -->

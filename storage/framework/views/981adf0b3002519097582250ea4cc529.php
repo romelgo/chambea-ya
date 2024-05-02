@@ -15,14 +15,14 @@
             
             <?php endif; ?>
             <div class="card">
-                <div class="card-header text-center"><h3 class="mt-1"><?php echo e(__('Login')); ?></h3></div>
+                <div class="card-header text-center"><h3 class="mt-1"><?php echo e(__('Iniciar Sesión')); ?></h3></div>
 
                 <div class="card-body">
                     <form method="POST" action="<?php echo e(route('login')); ?>">
                         <?php echo csrf_field(); ?>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end"><?php echo e(__('Email Address')); ?></label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end"><?php echo e(__('Correo electrónico')); ?></label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control <?php $__errorArgs = ['email'];
@@ -62,7 +62,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" name="password" required autocomplete="current-password">
 
-                                <?php $__errorArgs = ['password'];
+                                <?php $__errorArgs = ['Contraseña'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -83,7 +83,7 @@ unset($__errorArgs, $__bag); ?>
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>>
 
                                     <label class="form-check-label" for="remember">
-                                        <?php echo e(__('Remember Me')); ?>
+                                        <?php echo e(__('Recordarme')); ?>
 
                                     </label>
                                 </div>
@@ -93,13 +93,13 @@ unset($__errorArgs, $__bag); ?>
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <?php echo e(__('Login')); ?>
+                                    <?php echo e(__('Iniciar')); ?>
 
                                 </button>
 
                                 <?php if(Route::has('password.request')): ?>
                                     <a class="btn btn-link" href="<?php echo e(route('password.request')); ?>">
-                                        <?php echo e(__('Forgot Your Password?')); ?>
+                                        <?php echo e(__('¿Olvidaste tu contraseña?')); ?>
 
                                     </a>
                                 <?php endif; ?>

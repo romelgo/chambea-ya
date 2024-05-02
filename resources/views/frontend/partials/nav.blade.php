@@ -143,7 +143,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content pb-4">
       <div class="modal-header mt-2 mb-2">
-        <h5 class="modal-title" id="login-modal">{{ __('User/Employee/Admin') }}</h5>
+        <h5 class="modal-title" id="login-modal">{{ __('Usuario/Empresa/Admin') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -156,7 +156,7 @@
                     @csrf
                       
                     <div class="row mb-3">
-                        <label for="email" class="col-md-12 col-form-label text-md-start">{{ __('Email Address') }}</label>
+                        <label for="email" class="col-md-12 col-form-label text-md-start">{{ __('Corro electrónico') }}</label>
 
                         <div class="col-md-12">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -175,7 +175,7 @@
                         <div class="col-md-12">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                            @error('password')
+                            @error('Contraseña')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -189,7 +189,7 @@
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                 <label class="form-check-label" for="remember">
-                                    {{ __('Remember Me') }}
+                                    {{ __('Recordarme') }}
                                 </label>
                             </div>
                         </div>
@@ -198,12 +198,12 @@
                     <div class="row mb-0">
                         <div class="col-md-12 ">
                             <button type="submit" class="btn btn-primary">
-                                {{ __('Login') }}
+                                {{ __('Iniciar') }}
                             </button>
 
                             @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                                    {{ __('¿Olvidaste tu contraseña?') }}
                                 </a>
                             @endif
                         </div>

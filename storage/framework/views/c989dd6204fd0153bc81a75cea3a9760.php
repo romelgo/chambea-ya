@@ -4,14 +4,15 @@
 
       <div class="row">
         <div class="col-md-4">
-          <h3 class="footer-heading mb-4 text-white">About</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
-          <p><a href="#" class="btn btn-primary pill text-white px-4">Read More</a></p>
+        <h2 class="mb-0 site-logo "><a class="text-success"href="/">Chambea<strong class="font-weight-bold text-info">YA!</strong> </a></h2>
+          <!-- <h3 class="footer-heading mb-4 text-white">Chambea YA!</h3> -->
+          <p>Es una plataforma digital diseñada para facilitar la conexión entre empleadores y trabajadores en el país. A través de esta plataforma, los empleadores pueden publicar ofertas de empleo de manera eficiente,</p>
+          <p><a href="#" class="btn btn-primary pill text-white px-4">Leer mas</a></p>
         </div>
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-6">
-              <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+              <h3 class="footer-heading mb-4 text-white">Menú rápido</h3>
                 <ul class="list-unstyled">
 
                   <?php $__currentLoopData = App\Models\Category::has('jobs')->limit(5)->where('status', 1)->orderBy('name', 'desc')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -22,7 +23,7 @@
                 </ul>
             </div>
             <div class="col-md-6">
-              <h3 class="footer-heading mb-4 text-white">Categories</h3>
+              <h3 class="footer-heading mb-4 text-white">Categorias</h3>
                 <ul class="list-unstyled">
                   <?php $__currentLoopData = App\Models\Category::has('jobs')->limit(5)->where('status', 1)->orderBy('name', 'asc')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <li><a href="<?php echo e(route('category.index', [$cat->id,$cat->slug ])); ?>"><?php echo e($cat->name); ?> (<?php echo e($cat->jobs->count()); ?>)</a></li>
@@ -34,7 +35,7 @@
 
         
         <div class="col-md-2">
-          <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+          <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social</h3></div>
             <div class="col-md-12">
               <p>
                 <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>

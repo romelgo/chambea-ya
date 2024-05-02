@@ -154,9 +154,9 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6 text-center" data-aos="fade">
-            <h1 class="h3 mb-0">Your Dream Job</h1>
-            <p class="h3 text-white mb-5">Is Waiting For You</p>
-            <p><a href="/register" class="btn btn-outline-warning py-3 px-4">Job seeker</a> <a href="<?php echo e(route('employer.register')); ?>" class="btn btn-warning py-3 px-4">Employer </a></p>
+            <h1 class="h3 mb-0">El trabajo de tus sueños</h1>
+            <p class="h3 text-white mb-5">Te está esperando</p>
+            <p><a href="/register" class="btn btn-outline-warning py-3 px-4">Usuario</a> <a href="<?php echo e(route('employer.register')); ?>" class="btn btn-warning py-3 px-4">Empresa </a></p>
             
           </div>
         </div>
@@ -169,35 +169,35 @@
       <div class="container">
         
         <div class="text-center mb-5 section-heading">
-          <h2>Why Choose Us</h2>
+          <h2>¿Por qué elegirnos?</h2>
         </div>
 
         <div class="d-block d-md-flex border-bottom">
           <div class="text-center p-4 item border-right" data-aos="fade">
             <span class="flaticon-worker display-3 mb-3 d-block text-primary"></span>
-            <h2 class="h4">More Jobs Every Day</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
-            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
+            <h2 class="h4">Más empleos cada día</h2>
+            <p>Ofrece nuevas oportunidades laborales diariamente. La plataforma conecta a empleadores con candidatos de forma ágil y eficiente, brindando actualizaciones constantes de vacantes en diversos sectores y regiones</p>
+            <p><a href="#">Leer mas <span class="icon-arrow-right small"></span></a></p>
           </div>
           <div class="text-center p-4 item" data-aos="fade">
             <span class="flaticon-wrench display-3 mb-3 d-block text-primary"></span>
-            <h2 class="h4">Creative Jobs</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
-            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
+            <h2 class="h4">Trabajos creativos</h2>
+            <p>Es una plataforma ofrece una variedad de ofertas de trabajo, desde freelance hasta posiciones de tiempo completo, para ayudar a los profesionales a conectar con empleadores que buscan talento innovador.</p>
+            <p><a href="#">Lear mas <span class="icon-arrow-right small"></span></a></p>
           </div>
         </div>
         <div class="d-block d-md-flex">
-          <div class="text-center p-4 item border-right" data-aos="fade">
+          <!-- <div class="text-center p-4 item border-right" data-aos="fade">
             <span class="flaticon-stethoscope display-3 mb-3 d-block text-primary"></span>
             <h2 class="h4">Healthcare</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
-            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
-          </div>
+            <p><a href="#">Lear mas <span class="icon-arrow-right small"></span></a></p>
+          </div> -->
           <div class="text-center p-4 item" data-aos="fade">
             <span class="flaticon-calculator display-3 mb-3 d-block text-primary"></span>
-            <h2 class="h4">Finance &amp; Accounting</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
-            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
+            <h2 class="h4">Finanzas &amp; Contabilidad</h2>
+            <p>Es una plataforma de empleo enfocada en oportunidades laborales para profesionales de la contabilidad y finanzas. Ofrece una variedad de vacantes en roles como contadores, auditores, analistas financieros, y otros cargos relacionados</p>
+            <p><a href="#">Lear mas <span class="icon-arrow-right small"></span></a></p>
           </div>
         </div>
       </div>

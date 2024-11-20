@@ -38,7 +38,7 @@
                             <a href="/home">Registrarse</a>
                             
                             <ul class="dropdown arrow-top">
-                              <li><a  href="/register">
+                              <li><a  href="<?php echo e(route('register')); ?>">
                                   <?php echo e(__('Usuario')); ?>
 
                                 </a>

@@ -2,15 +2,15 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12" data-aos="fade">
-          <h1>Chambea YA! Perú: <strong class="font-weight-bold text-info">Encuentra Trabajo Fácilmente</strong></h1>
-          
+          <h1><span></span> Chambea YA! Perú: <strong class="font-weight-bold text-info">Encuentra Trabajo Fácilmente</strong></h1>
+
             <div class="row mb-3">
               <div class="col-md-9">
                 <div class="row">
                   <div class="col-md-12 mb-3 mb-md-0">
                     <search-component></search-component>
                   </div>
-       
+
                 </div>
               </div>
               <div class="col-md-3">
@@ -21,9 +21,10 @@
               <div class="col-md-12">
                 <p class="small">o busque por título, dirección, puesto: </p>
               </div>
-            </div> 
-            
+            </div>
+
         </div>
       </div>
     </div>
-  </div><?php /**PATH D:\despligue\portal-v1\resources\views/frontend/partials/hero.blade.php ENDPATH**/ ?>
+  </div>
+<?php /**PATH D:\despligue\portal-v1\resources\views/frontend/partials/hero.blade.php ENDPATH**/ ?>

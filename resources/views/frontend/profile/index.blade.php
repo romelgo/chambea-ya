@@ -26,7 +26,7 @@
                             @csrf
                         
                             <div class="form-group">
-                                <label for="">Address</label>
+                                <label for="">Direccion</label>
                                 <input type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ Auth::user()->profile->address }}">
                         
                                 @if ($errors->has('address'))
@@ -37,7 +37,7 @@
 
                             </div>
                             <div class="form-group mt-3">
-                                <label for="">Phone number</label>
+                                <label for="">Número de teléfono</label>
                                 <input type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ Auth::user()->profile->phone }}">
                                 @if ($errors->has('phone'))
                                 <div style="color:red">
@@ -48,7 +48,7 @@
 
                             </div>
                             <div class="form-group mt-3">
-                                <label for="">Experience</label>
+                                <label for="">Experiencia</label>
                                 <input type="text" class="form-control{{ $errors->has('experience') ? ' is-invalid' : '' }}" name="experience" value="{{ Auth::user()->profile->experience }}">
                                 @if ($errors->has('experience'))
                                 <div style="color:red">
@@ -58,7 +58,7 @@
 
                             </div>
                             <div class="form-group mt-3">
-                                <label for="">Bio</label>
+                                <label for="">Biografía</label>
                                 <textarea name="bio" id="" style="height: 120px" class="form-control{{ $errors->has('bio') ? ' is-invalid' : '' }}" cols="30" rows="10">{{ Auth::user()->profile->bio }}</textarea>
                                 @if ($errors->has('bio'))
                                 <div style="color:red">
@@ -131,12 +131,12 @@
                     <div class="card-body">
                         <p>Name:  <strong class="badge bg-secondary badge-primary">{{ Auth::user()->name }}</strong></p>
                         <p>Email: <strong class="badge bg-secondary badge-primary">{{ Auth::user()->email }}</strong> </p>
-                        <p>Phone number: <strong class="badge bg-secondary badge-primary">{{ Auth::user()->profile->phone }} </strong> </p>
-                        <p>Address: <strong class="badge bg-secondary badge-primary"> {{ Auth::user()->profile->address }}</strong> </p>
-                        <p>Gender: <strong class="badge bg-secondary badge-primary"> {{ Auth::user()->profile->gender }}</strong> </p>
+                        <p>Número de teléfono: <strong class="badge bg-secondary badge-primary">{{ Auth::user()->profile->phone }} </strong> </p>
+                        <p>Direccion: <strong class="badge bg-secondary badge-primary"> {{ Auth::user()->profile->address }}</strong> </p>
+                        <!-- <p>Gender: <strong class="badge bg-secondary badge-primary"> {{ Auth::user()->profile->gender }}</strong> </p> -->
                         <p> <strong class="badge bg-secondary badge-primary">Experience:</strong> {{ Auth::user()->profile->experience }} </p>
                         <p><strong class="badge bg-secondary badge-primary"> Bio: </strong> {{ Auth::user()->profile->bio }} </p>
-                        <p>Member On: <strong class="badge bg-secondary badge-primary"> {{ date('F d Y', strtotime(Auth::user()->created_at)) }}</strong> </p>
+                        <!-- <p>Member On: <strong class="badge bg-secondary badge-primary"> {{ date('F d Y', strtotime(Auth::user()->created_at)) }}</strong> </p> -->
 
                         @if (!empty(Auth::user()->profile->cover_letter))
                             <p>Download Carta: <strong class="badge bg-info badge-primary"><a class="text-white" target="_blank" href="{{ url('storage/'.Auth::user()->profile->cover_letter) }}"> Carta</a></strong></p>
@@ -164,11 +164,11 @@
                     @csrf
                     <div class="card mt-3">
                         <div class="card-header">
-                            Update Cover letter
+                        Actualizar carta de presentación
                         </div>
                         <div class="card-body">
                             <input type="file" class="form-control{{ $errors->has('cover_letter') ? ' is-invalid' : '' }}" name="cover_letter">
-                            <button class="btn btn-success mt-3">Update</button>
+                            <button class="btn btn-success mt-3">Actualizar</button>
 
                         @if (Session::has('coverletter'))
                             <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
@@ -194,12 +194,12 @@
                         @csrf
                     <div class="card mt-3">
                         <div class="card-header">
-                            Update Resume
+                        Actualizar currículum
                         </div>
                         <div class="card-body">
                             
                             <input type="file" class="form-control{{ $errors->has('resume') ? ' is-invalid' : '' }}" name="resume">
-                            <button class="btn btn-success mt-3">Update</button>
+                            <button class="btn btn-success mt-3">Actualizar</button>
                             @if (Session::has('resume'))
                                 <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
                                     <strong>Wow !</strong> {{ Session::get('resume') }}

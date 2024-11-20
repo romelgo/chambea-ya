@@ -169,7 +169,7 @@
 
 <?php elseif(!Auth::check()): ?>
     <!-- Mostrar botón para iniciar sesión o registrarse -->
-    <p><a href="/register" class="btn btn-dark w-100">Para aplicar es necesario registrarse/iniciar sesión.</a></p>
+    <p><a href="<?php echo e(route('register')); ?>" class="btn btn-dark w-100">Para aplicar es necesario <br>registrarse/iniciar sesión.</a></p>
 <?php endif; ?>
 
               <!--  -->
